@@ -1,0 +1,191 @@
+:global(.wx-willow-theme) {
+
+    /* ========================= */
+    /* BASE COLORS (DaisyUI)     */
+    /* ========================= */
+    --wx-color-primary: var(--color-primary) !important;
+    --wx-color-primary-selected: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    --wx-color-primary-font: var(--color-primary-content);
+    --wx-color-secondary: transparent;
+    --wx-color-secondary-hover: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    --wx-color-secondary-font: var(--color-primary);
+    --wx-color-secondary-font-hover: var(--color-primary);
+    --wx-color-secondary-border: var(--color-primary);
+    --wx-color-secondary-border-disabled: var(--color-base-300);
+    --wx-color-success: var(--color-success);
+    --wx-color-warning: var(--color-warning);
+    --wx-color-info: var(--color-info);
+    --wx-color-danger: var(--color-error);
+    --wx-color-disabled: var(--color-base-200);
+    --wx-color-disabled-alt: var(--color-base-300);
+    --wx-color-font: var(--color-base-content);
+    --wx-color-font-alt: var(--color-neutral);
+    --wx-color-font-disabled: var(--color-neutral-content);
+    --wx-color-link: var(--color-primary);
+    --wx-background: var(----color-base-100);
+    --wx-background-alt: var(--color-base-200);
+    --wx-background-hover: var(--color-base-300);
+    /* ========================= */
+    /* FONT                      */
+    /* ========================= */
+    --wx-font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    --wx-font-size: 14px;
+    --wx-line-height: 20px;
+    --wx-font-size-md: 14px;
+    --wx-line-height-md: 24px;
+    --wx-font-size-hd: 16px;
+    --wx-line-height-hd: 30px;
+    --wx-font-size-sm: 12px;
+    --wx-line-height-sm: 16px;
+    --wx-font-weight: 400;
+    --wx-font-weight-md: 600;
+    --wx-font-weight-b: 700;
+    /* ========================= */
+    /* ICONS                     */
+    /* ========================= */
+    --wx-icon-color: var(--color-neutral);
+    --wx-icon-size: var(--wx-line-height);
+    --wx-icon-border-radius: 2px;
+    /* ========================= */
+    /* BORDERS & SHADOWS         */
+    /* ========================= */
+    --wx-border: 1px solid var(--color-base-300);
+    --wx-border-radius: 3px;
+    --wx-radius-major: 6px;
+    --wx-border-light: none;
+    --wx-border-medium: 1px solid var(--color-base-300);
+    /* Sombras Willow (mantener estética corporativa) */
+    --wx-shadow-light: 0px 3px 10px rgba(0, 0, 0, 0.10);
+    --wx-shadow-medium: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    --wx-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 3px 10px rgba(0, 0, 0, 0.12);
+    --wx-box-shadow-strong: 0px 4px 20px rgba(0, 0, 0, 0.16);
+    --wx-padding: 8px;
+    /* ========================= */
+    /* INPUTS                    */
+    /* ========================= */
+    --wx-input-font-family: var(--wx-font-family);
+    --wx-input-font-size: var(--wx-font-size);
+    --wx-input-line-height: var(--wx-line-height);
+    --wx-input-font-weight: var(--wx-font-weight);
+    --wx-input-text-align: left;
+    --wx-input-font-color: var(--color-base-content);
+    --wx-input-background: var(--color-base-100);
+    --wx-input-background-disabled: var(--color-base-200);
+    --wx-input-placeholder-color: var(--color-neutral);
+    --wx-input-border: 1px solid var(--color-base-300);
+    --wx-input-border-focus: 1px solid var(--color-primary);
+    --wx-input-border-disabled: 1px solid var(--color-base-300);
+    --wx-input-border-radius: 3px;
+    --wx-input-height: 32px;
+    --wx-input-width: 100%;
+    --wx-input-padding: 5px 8px;
+    --wx-input-icon-indent: 6px;
+    --wx-input-icon-color: var(--color-neutral);
+    --wx-input-icon-size: var(--wx-icon-size);
+    /* ========================= */
+    /* BUTTONS                   */
+    /* ========================= */
+    --wx-button-font-family: var(--wx-font-family);
+    --wx-button-font-size: var(--wx-font-size-md);
+    --wx-button-line-height: var(--wx-line-height);
+    --wx-button-font-weight: var(--wx-font-weight-md);
+    --wx-button-text-transform: none;
+    --wx-button-font-color: var(--color-base-content);
+    --wx-button-danger-font-color: var(--color-error-content);
+    --wx-button-background: var(--color-base-200);
+    --wx-button-border: 1px solid transparent;
+    --wx-button-border-radius: var(--wx-border-radius);
+    --wx-button-height: 32px;
+    --wx-button-padding: 5px 16px;
+    --wx-button-icon-indent: 5px;
+    --wx-button-icon-size: 20px;
+    --wx-button-pressed: var(--color-base-300);
+    --wx-button-danger-pressed: color-mix(in srgb, var(--color-error) 80%, black);
+    --wx-button-primary-pressed: color-mix(in srgb, var(--color-primary) 80%, black);
+    --wx-button-box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.4) inset, 2px 2px 3px rgba(0, 0, 0, 0.12) inset;
+    --wx-button-primary-box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.2) inset, 2px 2px 3px rgba(0, 0, 0, 0.16) inset;
+    /* ========================= */
+    /* TABS                      */
+    /* ========================= */
+    --wx-tabs-background: var(--color-base-100);
+    --wx-tabs-background-hover: transparent;
+    --wx-tabs-hover-border: var(--color-neutral);
+    --wx-tabs-border-width: 1px;
+    --wx-tabs-border-radius: var(--wx-border-radius);
+    --wx-tabs-divider-width: 1px;
+    --wx-tabs-divider-height: 60%;
+    --wx-tabs-divider-color: transparent;
+    --wx-tabs-cell-min-width: 100px;
+    --wx-tabs-active-background: transparent;
+    --wx-tabs-active-color: var(--color-primary);
+    --wx-tabs-active-border: var(--color-primary);
+    /* ========================= */
+    /* POPUP / DROPDOWN / MODAL  */
+    /* ========================= */
+    --wx-popup-background: var(--color-base-100);
+    --wx-popup-shadow: var(--wx-shadow-light);
+    --wx-popup-border: 1px solid var(--color-base-300);
+    --wx-popup-border-radius: var(--wx-border-radius);
+    --wx-modal-background: var(--color-base-100);
+    --wx-modal-shadow: var(--wx-shadow-medium);
+    --wx-modal-border: none;
+    --wx-modal-border-radius: var(--wx-border-radius);
+    /* ========================= */
+    /* NOTICE                    */
+    /* ========================= */
+    --wx-notice-background: var(--color-base-100);
+    --wx-notice-shadow: var(--wx-shadow-medium);
+    --wx-notice-border-radius: 0 var(--wx-border-radius) var(--wx-border-radius) 0;
+    --wx-notice-font-color: var(--color-base-content);
+    --wx-notice-type-border-color: var(--color-neutral);
+    --wx-notice-type-font-color: var(--color-base-content);
+    --wx-notice-type-icon-color: var(--color-neutral);
+    /* ========================= */
+    /* CALENDAR                  */
+    /* ========================= */
+    --wx-calendar-font-color: var(--color-base-content);
+    --wx-calendar-icon-color: var(--color-neutral);
+    --wx-calendar-header-font-weight: var(--wx-font-weight-md);
+    /* ========================= */
+    /* FILTER                    */
+    /* ========================= */
+    --wx-filter-value-color: var(--wx-color-primary);
+    --wx-filter-and-background: #fcba2e;
+    --wx-filter-or-background: #77d257;
+    --wx-filter-and-font-color: var(--wx-color-font);
+    --wx-filter-or-font-color: var(--wx-color-font);
+    --wx-filter-border: 1px solid #e6e6e6;
+    /* ========================= */
+    /* DATA GRID                 */
+    /* ========================= */
+    --wx-table-select-background: #eaedf5;
+    --wx-table-select-color: var(--wx-color-font);
+    --wx-table-border: 1px solid #e6e6e6;
+    --wx-table-select-border: inset 3px 0 var(--wx-color-primary);
+    --wx-table-header-border: var(--wx-table-border);
+    --wx-table-header-cell-border: var(--wx-table-border);
+    --wx-table-footer-cell-border: var(--wx-table-border);
+    --wx-table-cell-border: var(--wx-table-border);
+    --wx-header-font-weight: 600;
+    --wx-table-header-background: #f2f3f7;
+    --wx-table-fixed-column-border: 3px solid #e6e6e6;
+    --wx-table-editor-dropdown-border: var(--wx-table-border);
+    --wx-table-editor-dropdown-shadow: 0px 4px 20px 0px rgba(44, 47, 60, 0.12);
+    --wx-table-drag-over-background: var(--wx-background-alt);
+    --wx-table-drag-zone-shadow: var(--wx-box-shadow);
+    /* ========================= */
+    /* ROOT STYLE                */
+    /* ========================= */
+    font-family: var(--wx-font-family);
+    font-size: var(--wx-font-size);
+    line-height: var(--wx-line-height);
+    font-weight: var(--wx-font-weight);
+    color: var(--wx-color-font);
+    background: var(--wx-background);
+    box-sizing: border-box;
+}
+
+:global(.wx-willow-theme .wx-table-menu) {
+    box-shadow: 0px 4px 20px 0px rgba(44, 47, 60, 0.12);
+    outline: 1px solid #e6e6e6;
+}

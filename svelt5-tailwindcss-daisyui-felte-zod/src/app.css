@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@plugin "daisyui" { 
+    themes:
+        corporate --default, 
+        dark --prefersdark, 
+        light,
+        business, 
+        cupcake,
+        garden,
+        synthwave,
+        emerald,
+        dracula; 
+}
+
+
+/* Estilos personalizados para MovieManager 
+
+🌞 Temas claros
+
+    light
+
+    corporate
+
+    cupcake
+
+    bumblebee
+
+    emerald
+
+    lofi
+
+    pastel
+
+    fantasy
+
+    wireframe
+
+    autumn
+
+    acid
+
+    lemonade
+
+    winter
+
+    nord
+
+    sunrise
+
+🌙 Temas oscuros
+
+    dark
+
+    synthwave
+
+    retro
+
+    cyberpunk
+
+    valentine
+
+    halloween
+
+    garden
+
+    forest
+
+    aqua
+
+    black
+
+    luxury
+
+    dracula
+
+    business
+
+    night
+
+    coffee
+
+    dim
+
+    cmyk
+
+    */
