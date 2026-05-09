@@ -58,18 +58,20 @@ En este caso, puse esta guía en la instalación:
 
 Para que Bootstrap este disponible para todos los elementos hay que modificar el fichero «Main.js» debe tener este código:
 
-`import { mount } from 'svelte' <br/>
-import 'bootstrap/dist/css/bootstrap.min.css'; <br/>
-import 'bootstrap-icons/font/bootstrap-icons.css'; <br/>
-import * as bootstrap from 'bootstrap'; <br/>
-import './app.css' <br/>
-import App from './App.svelte';  <br/>
-// Hacer bootstrap disponible globalmente (necesario para el navbar)  <br/>
-window.bootstrap = bootstrap;  <br/>
-const app = mount(App, {  <br/>
- target: document.getElementById('app'),  <br/>
-})  <br/>
-export default app`  <br/>
+```js
+import { mount } from 'svelte'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import * as bootstrap from 'bootstrap';
+import './app.css'
+import App from './App.svelte';
+// Hacer bootstrap disponible globalmente (necesario para el navbar)
+window.bootstrap = bootstrap;
+const app = mount(App, {
+ target: document.getElementById('app'),
+})
+export default app
+```
 
 Y el fichero «jsconfig.json», se debe modificar para que sepa que sólo vamos a trabajar con JavaScript
 
