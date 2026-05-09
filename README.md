@@ -38,13 +38,13 @@ El desarrollo está dividido en 3 directorios:
   En mi blog https://fhumanes.com/blog , explico con detalle cómo se escriben estos programas, aunque los de este ejemplo están comentados para que sea más sencillos leerlos.
   
   En los ejemplos de solución de FrontEnd, siempre va a usar este código de Backend. 
-  Si dispones de un nivel medio-bajo de PHP, no tendrás problemas en adaptar o crear servidores de Rest Api, de esta forma, no obstante, las IA's, indicando el modelo de datos y diciendo que utilizas SLIM4, te va a generar códigos bastantes sencillos de leer y corregir.
-  
-  ## Aplicaciones de FrontEnd
-  
-  Como he explicado, os voy a dejar 4 versiones que tienen la misma funcionalidad, pero distinto interfaz. He utilizado 4 de las soluciones más generales que se utilizan en Svelte5.
-  
-  Las voy a poner en el orden que las cree, porque entiendo que así veréis que iba aprendiendo según las utilizaba.
+  Si dispones de un nivel medio-bajo de PHP, no tendrás problemas en adaptar o crear servidores de Rest Api de esta forma, no obstante, las IA's, indicando el modelo de datos y diciendo que utilizas SLIM4, te va a generar códigos bastantes sencillos de leer y corregir.
+
+### ## Aplicaciones de FrontEnd
+
+Como he explicado, os voy a dejar 4 versiones que tienen la misma funcionalidad, pero distinto interfaz. He utilizado 4 de las soluciones más generales que se utilizan en Svelte5.
+
+Las voy a poner en el orden que las cree, porque entiendo que así veréis que iba aprendiendo según las utilizaba.
 
 ### Svelte 5 + Bootstrap 5
 
@@ -54,10 +54,11 @@ El desarrollo está dividido en 3 directorios:
 
 Al venir del "mundo de desarrollo de aplicaciones web" quería ver la funcionalidad de esta plataforma con el estándar de UI de Bootstrap 5.
 
-
-
 En este caso, puse esta guía en la instalación:
+
 Para que Bootstrap este disponible para todos los elementos hay que modificar el fichero «Main.js» debe tener este código:
+
+
 `import { mount } from 'svelte'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -70,6 +71,8 @@ const app = mount(App, {
  target: document.getElementById('app'),
 })
 export default app`
+
+
 
 Y el fichero «jsconfig.json», se debe modificar para que sepa que sólo vamos a trabajar con JavaScript
 
@@ -106,8 +109,6 @@ Para ejecutar el servicio de Web de Test:
 
 ***npm run build*** Para construir el aplicativo que se podrá llevar a cualquier servidor de aplicaciones
 
-
-
 ### Svelte 5 + Svar 2
 
 ![](assets/2026-05-08-20-29-28-image.png)
@@ -124,19 +125,17 @@ explica funcionalidades de estos componentes.
 
 <img title="" src="assets/2026-05-08-20-34-13-image.png" alt="" data-align="center" width="271">Este es un ejemplo básico y quiero desarrollarlo mucho más, pero entiendo que puede ser el nivel idóneo para que entendáis el funcionamiento de los componentes de SVAR, paso inicial para que después podáis leer y entender los ejemplos que dispone esta empresa.
 
-«**src/components**«.- están los ficheros que tiene programado el CRUD de la tabla «movies». El fichero «StarCell.svelte» es el que dibuja las estrellas de la clasificación.
+«**src/components**».- están los ficheros que tiene programado el CRUD de la tabla «**movies**». El fichero «StarCell.svelte» es el que dibuja las estrellas de la clasificación.
 
-«**src/lib**«.- Tiene la clase y configuración para los accesos a «movies-server».
+«**src/lib**».- Tiene la clase y configuración para los accesos a «movies-server».
 
-«**src/locales**«.- Tiene las traducciones de los textos de los componentes de SVAR que no disponen de una versión en Español.
+«**src/locales**».- Tiene las traducciones de los textos de los componentes de SVAR que no disponen de una versión en Español.
 
-«**src/notification**«.- Tiene el código y los recursos para hacer las notificaciones que se utilizan en la aplicación.
+«**src/notification**».- Tiene el código y los recursos para hacer las notificaciones que se utilizan en la aplicación.
 
 Podréis comprobar que en el GRID de Películas he utilizado código distinto para resolver el «lookup» de Temas y el de Soporte. Esto lo he hecho para que podáis comprobar cómo se puede utilizar ambas formas y las ventajas e inconvenientes que puede tener cada forma de resolver el «lookup».
 
 Creo que los ficheros del directorio «src/components», están llenos de comentarios y pienso que se pueden entender, no obstante si algún aspecto os resulta complejo, por favor, avisadme en mi email e intentaré resolver vuestras dudas.
-
-
 
 ### Svelte 5 + Tailwind CSS + Daisy UI + Felte + Zod
 
@@ -172,22 +171,19 @@ En la página de [Daisy UI](https://daisyui.com/docs/install/) te explica cómo 
   Para **instalar un desarrollo**, es necesario descargarlo en un directorio y después:  
   ***cd <directorio-app>***  
   ***npm install***
-  
 
 - **Instalar Tailwind CSS y Daisy UI**
   
   **npm install tailwindcss@latest @tailwindcss/vite@latest daisyui@latest**
-  
 
 - **Añadir Tailwind CSS a Vite Config**
   
   Fichero **vite.config.js**
-  
-  
+
   `import { defineConfig } from 'vite'
   import { svelte } from '@sveltejs/vite-plugin-svelte'
   import tailwindcss from '@tailwindcss/vite'
-  
+
   export default defineConfig({
     plugins: [svelte(), tailwindcss()],
     base: 'tu-proyecto',
@@ -197,13 +193,11 @@ En la página de [Daisy UI](https://daisyui.com/docs/install/) te explica cómo 
       assetsInlineLimit: 0 // Asegura que los assets no se conviertan en base64
     }
   });`
-  
 
 - **Configurar los CSS de Tailwind CSS y Daisy U**I
   
   En el fichero **src/app.css** o si lo deseas, **src/style.css**
-  
-  
+
   `@import "tailwindcss";
   @plugin "daisyui" {
       themes:
@@ -217,19 +211,11 @@ En la página de [Daisy UI](https://daisyui.com/docs/install/) te explica cómo 
           emerald,
           dracula;
   }`
-  
-  
-  
-  
-  
-  
 
 Aquí se define los temas de Daisy UI que están definidos por defecto y además los que puedes usar y cambiar dinámicamente.  
 La información de los temas y su configuración lo puedes ver [en este enlace](https://daisyui.com/docs/themes/). Para cambiar dinámicamente de tema tienes que utilizar esta sentencia:
 
 `document.documentElement.setAttribute("data-theme", "emerald");`
-
-
 
 ### Svelte 5 + SVAR 2 + Tailwind CSS + Daisy UI
 
@@ -266,8 +252,6 @@ ajuste el tema de SVAR.
 los ficheros CSS.  Si observáis, el fichero (3), su contenido está en el apartado de «<styles global>». Cuando desarrollo, lo tengo que tener ahí para que los cambios se vean actualizado en la ventana de Test del desarrollo. Esto no es necesario en producción y puede habilitarse la línea 48.
 
 `@import "./themes/custom-theme.css"; /* Importa tu tema personalizado */`
-
-
 
 Es muy probable que surjan nuevo problemas como el que ha surgido en 
 el tratamiento de los «Tooltip». En este caso, parece que ambas 
