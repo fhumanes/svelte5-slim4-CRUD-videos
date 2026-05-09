@@ -73,18 +73,21 @@ const app = mount(App, {
 export default app
 ```
 
-Y el fichero «jsconfig.json», se debe modificar para que sepa que sólo vamos a trabajar con JavaScript
+Y el fichero «jsconfig.json», se debe modificar para que sepa que sólo vamos a trabajar con JavaScript.
 
-`.......
+```json
+.......
     "checkJs": false
 ........
-  "include": ["src/**/*.js", "src/**/*.svelte"]`
+  "include": ["src/**/*.js", "src/**/*.svelte"]
+```
 
 Al menos en mi caso, es muy frecuente que mi APP o ejemplo no tenga que 
 estar en el directorio raíz de mi Web Server, por eso es necesario 
 configurar l fichero «vite.config.js»:
 
-`import { defineConfig } from 'vite'
+```js
+import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 // https://vite.dev/config/
 export default defineConfig({
@@ -95,7 +98,9 @@ export default defineConfig({
     assetsDir: 'assets',
     assetsInlineLimit: 0 // Asegura que los assets no se conviertan en base64
   }
-});`
+});
+```
+
 En la opción «base» se indica la URL del proyecto.
 
 Para **instalar un desarrollo**, es necesario descargarlo en un directorio y después:  
@@ -120,9 +125,9 @@ cualquier ejercicio que hayas iniciado en ese proceso de aprendizaje.
 Este ejemplo es la última modificación que he realizado y **es la solución recomendada**, para que la utilicéis de modelo. Esto no significa que las versiones 
 anteriores no sirvan, que yo creo que para aprender , al ser más 
 simples, son más sencillas para aprender . Pero esta versión es la mejor si la tabla de datos que estás utilizando tiene algún aspecto de complejidad, además que 
-explica funcionalidades de estos componentes.
+explica funcionalidades de estos componentes.<img title="" src="assets/2026-05-08-20-34-13-image.png" alt="" data-align="center" width="271">
 
-<img title="" src="assets/2026-05-08-20-34-13-image.png" alt="" data-align="center" width="271">Este es un ejemplo básico y quiero desarrollarlo mucho más, pero entiendo que puede ser el nivel idóneo para que entendáis el funcionamiento de los componentes de SVAR, paso inicial para que después podáis leer y entender los ejemplos que dispone esta empresa.
+Este es un ejemplo básico y quiero desarrollarlo mucho más, pero entiendo que puede ser el nivel idóneo para que entendáis el funcionamiento de los componentes de SVAR, paso inicial para que después podáis leer y entender los ejemplos que dispone esta empresa.
 
 «**src/components**».- están los ficheros que tiene programado el CRUD de la tabla «**movies**». El fichero «StarCell.svelte» es el que dibuja las estrellas de la clasificación.
 
@@ -149,7 +154,9 @@ habituales que los programadores «nativos» de Svelte, utilizan.
 
 De ahí surgió la utilización de estos productos:
 
-- **Para interface de aplicación, UI**.- He seleccionado [**Tailwind CSS**](https://tailwindcss.com/), que prácticamente es un estándar y que es utilizado masivamente por todos (mucho más que [Bootstrap](https://getbootstrap.com/)) y se complemente con [**Daisy UI**](https://daisyui.com/) que facilita el uso de TailWind CSS y nos dota de Temas, componentes para la iteración con el usuario, etc. Muy, muy importante y excelente solución, que nos soluciona la escritura de los componentes de iteración con el usuario.
+- **Para interface de aplicación, UI**.- He seleccionado [**Tailwind CSS**](https://tailwindcss.com/), que prácticamente es un estándar y que es utilizado masivamente por todos (mucho más que [Bootstrap](https://getbootstrap.com/)) y se complemente con [**Daisy UI**](https://daisyui.com/) que facilita el uso de TailWind CSS y nos dota de Temas, componentes para la iteración con el usuario, etc. 
+  Muy, muy importante y excelente solución, que nos facilita la escritura de los componentes de iteración con el usuario.
+
 - **Para la lógica y validación de los formularios**.- 
   Los productos seleccionados no tienen tanta difusión, pero son un buen 
   ejemplo del ecosistema de soluciones que hay en el entorno de Svelte.  
@@ -165,7 +172,7 @@ En la página de [Daisy UI](https://daisyui.com/docs/install/) te explica cómo 
   ***cd <nombre-proyecto>***  
   ***npm install***
   
-  En el diálogo que aparece al hacer el *create*, indicad que quieres un proyecto de Svelte y que sólo vas a trabajar con JavaScript
+  En el diálogo que aparece al hacer el *create*, indicad que quieres un proyecto de **Svelte** y que sólo vas a trabajar con **JavaScript**.
   
   Para **instalar un desarrollo**, es necesario descargarlo en un directorio y después:  
   ***cd <directorio-app>***  
@@ -178,43 +185,49 @@ En la página de [Daisy UI](https://daisyui.com/docs/install/) te explica cómo 
 - **Añadir Tailwind CSS a Vite Config**
   
   Fichero **vite.config.js**
-  
-  `import { defineConfig } from 'vite'
-  import { svelte } from '@sveltejs/vite-plugin-svelte'
-  import tailwindcss from '@tailwindcss/vite'
-  
-  export default defineConfig({
-    plugins: [svelte(), tailwindcss()],
-    base: 'tu-proyecto',
-    build: {
-      outDir: 'dist',
-      assetsDir: 'assets',
-      assetsInlineLimit: 0 // Asegura que los assets no se conviertan en base64
-    }
-  });`
+
+```js
+import { defineConfig } from 'vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [svelte(), tailwindcss()],
+  base: 'tu-proyecto',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    assetsInlineLimit: 0 // Asegura que los assets no se conviertan en base64
+  }
+});
+```
 
 - **Configurar los CSS de Tailwind CSS y Daisy U**I
   
   En el fichero **src/app.css** o si lo deseas, **src/style.css**
-  
-  `@import "tailwindcss";
-  @plugin "daisyui" {
-      themes:
-          corporate --default,
-          dark --prefersdark,
-          light,
-          business,
-          cupcake,
-          garden,
-          synthwave,
-          emerald,
-          dracula;
-  }`
+
+```css
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes:
+        corporate --default,
+        dark --prefersdark,
+        light,
+        business,
+        cupcake,
+        garden,
+        synthwave,
+        emerald,
+        dracula;
+}
+```
 
 Aquí se define los temas de Daisy UI que están definidos por defecto y además los que puedes usar y cambiar dinámicamente.  
 La información de los temas y su configuración lo puedes ver [en este enlace](https://daisyui.com/docs/themes/). Para cambiar dinámicamente de tema tienes que utilizar esta sentencia:
 
-`document.documentElement.setAttribute("data-theme", "emerald");`
+```js
+document.documentElement.setAttribute("data-theme", "emerald");
+```
 
 ### Svelte 5 + SVAR 2 + Tailwind CSS + Daisy UI
 
@@ -222,14 +235,14 @@ La información de los temas y su configuración lo puedes ver [en este enlace](
 
 **DEMO**: [https://fhumanes.com/movie-svar/](https://fhumanes.com/movie-svar/#/movies)
 
-Este ejercicio era algo que quería emprender hace mucho tiempo. Los componentes de [SVAR](https://svar.dev/), me gustan, me parecen bastantes completos, creo que pueden ser muy 
-eficientes para escribir código rápidamente y que también pueden ser muy  útiles para aquellos que empiezan en el desarrollo, porque hay muchas  cosas  que hace por ti y que suelen estar muy bien hechas.
+Este ejercicio era algo que quería emprender hace mucho tiempo. Los componentes de **[SVAR**](https://svar.dev/), me gustan, me parecen bastantes completos, creo que pueden ser muy 
+eficientes para escribir código rápidamente y que también pueden ser muy útiles para aquellos que empiezan en el desarrollo, porque hay muchas  cosas  que hace por ti y que suelen estar muy bien hechas.
 
 Ahora bien, para mí, tiene una definición de temas que es bastante  «oscuro», ya que no disponen de una documentación sencilla y completa,  para que podamos ajustar estos temas a nuestra necesidades o gustos.
 
 Al haber terminado el ejemplo de [Tailwind CSS](https://tailwindcss.com/) y [Daisy UI](https://daisyui.com/), ver la facilidad que ofrecen a los desarrolladores para los ajustes de  UI de las aplicaciones, pensé que una solución de ese tipo, es lo que requerían los componentes de SVAR.
 
-La integración ha quedado un poco artificial. Se la he pasado al equipo de SVAR, por si consideran que pudiera ser de utilidad y que hagan el trabajo de integración.
+La integración ha quedado un poco artificial. Se la he pasado al equipo de **SVAR**, por si consideran que pudiera ser de utilidad y que hagan el trabajo de integración.
 
 (1) **themes/daisy-example.css** .- En este fichero lo único que muestra son las propiedades de CSS que varían cuando se cambian los temas de Daisy UI. No interviene en la ejecución de la aplicación.
 
@@ -243,43 +256,42 @@ ajuste el tema de SVAR.
 (4) **theme/ThemeSelector.svelte** .- Es el código que se utiliza para el cambio de tema de Daisy. Es sencillo de leer, un selector o combo de todos los tema y el código que
  produce el cambio:
 
-`document.documentElement.setAttribute("data-theme", selected);`
+```js
+  document.documentElement.setAttribute("data-theme", selected);
+```
 
 (5) **app.css** .- El fichero de integración de Tailwind y Daisy UI, con el conjunto de Temas que se pueden utilizar en la aplicación.
 
 (6)  **App.svelte** .- El inicio de la aplicación con la configuración de la carga de 
 los ficheros CSS.  Si observáis, el fichero (3), su contenido está en el apartado de «<styles global>». Cuando desarrollo, lo tengo que tener ahí para que los cambios se vean actualizado en la ventana de Test del desarrollo. Esto no es necesario en producción y puede habilitarse la línea 48.
 
-`@import "./themes/custom-theme.css"; /* Importa tu tema personalizado */`
+```js
+  @import "./themes/custom-theme.css"; /* Importa tu tema personalizado */
+```
 
 Es muy probable que surjan nuevo problemas como el que ha surgido en 
 el tratamiento de los «Tooltip». En este caso, parece que ambas 
-plataformas (Svar y Daisy), configuran la misma clase y tal como está 
-hecha la integración la configuración de SVAR se mantiene sobre la de 
-Daisy UI y por ello, cada vez que se utilice «Tooltip de Daisy» se tiene
+plataformas (**SVAR** y **Daisy**), configuran la misma clase y tal como está 
+hecha la integración la configuración de** SVAR **se mantiene sobre la de 
+**Daisy UI** y por ello, cada vez que se utilice «Tooltip de Daisy» se tiene
  que incluir esta definición de CSS.
 
-`/* Normalización de estilos para SVAR y DaisyUI */`
-
-`/* Para normalizar el Tooltip de Daisy, porque lo rompe SVAR */`
-
-`.tooltip[data-tip] {`
-
-`position: relative !important;`
-
-`pointer-events: auto !important;`
-
-`background-color: transparent !important;`
-
-`box-shadow: none !important;`
-
-`padding: 0 !important;`
-
-`z-index: 4 !important;`
-
-`}`
+```css
+/* Normalización de estilos para SVAR y DaisyUI */
+/* Para normalizar el Tooltip de Daisy, porque lo rompe SVAR */
+.tooltip[data-tip] {
+    position: relative !important;
+    pointer-events: auto !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    z-index: 4 !important;
+}
+```
 
 Aunque soy consciente que el ejercicio no está completamente así, como explico a continuación, mi intención es trabajar en esta propuesta:
 
-- Para todo lo que tenga que ver con Datra Grid, Filtros,   Formularios, etc, utilizar los componentes de SVAR.
-- Para todo lo que  no se utilice SVAR, utilizar los componentes de Daisy UI (estos componentes se ven más modernos).
+- Para todo lo que tenga que ver con DataGrid, Filtros, Formularios, etc, utilizar los componentes de** SVAR**.
+  
+  
+- Para todo lo que  no se utilice **SVAR**, utilizar los componentes de **Daisy UI** (estos componentes se ven más modernos).
