@@ -40,7 +40,7 @@ El desarrollo está dividido en 3 directorios:
   En los ejemplos de solución de FrontEnd, siempre va a usar este código de Backend. 
   Si dispones de un nivel medio-bajo de PHP, no tendrás problemas en adaptar o crear servidores de Rest Api de esta forma, no obstante, las IA's, indicando el modelo de datos y diciendo que utilizas SLIM4, te va a generar códigos bastantes sencillos de leer y corregir.
 
-### ## Aplicaciones de FrontEnd
+### Aplicaciones de FrontEnd
 
 Como he explicado, os voy a dejar 4 versiones que tienen la misma funcionalidad, pero distinto interfaz. He utilizado 4 de las soluciones más generales que se utilizan en Svelte5.
 
@@ -84,7 +84,7 @@ Y el fichero «jsconfig.json», se debe modificar para que sepa que sólo vamos 
 
 Al menos en mi caso, es muy frecuente que mi APP o ejemplo no tenga que 
 estar en el directorio raíz de mi Web Server, por eso es necesario 
-configurar l fichero «vite.config.js»:
+configurar el fichero «vite.config.js»:
 
 ```js
 import { defineConfig } from 'vite'
@@ -104,7 +104,7 @@ export default defineConfig({
 En la opción «base» se indica la URL del proyecto.
 
 Para **instalar un desarrollo**, es necesario descargarlo en un directorio y después:  
-***cd <directorio-app>***  
+***cd \<directorio-app\>***  
 ***npm install***
 
 Para ejecutar el servicio de Web de Test:
@@ -125,7 +125,11 @@ cualquier ejercicio que hayas iniciado en ese proceso de aprendizaje.
 Este ejemplo es la última modificación que he realizado y **es la solución recomendada**, para que la utilicéis de modelo. Esto no significa que las versiones 
 anteriores no sirvan, que yo creo que para aprender , al ser más 
 simples, son más sencillas para aprender . Pero esta versión es la mejor si la tabla de datos que estás utilizando tiene algún aspecto de complejidad, además que 
-explica funcionalidades de estos componentes.<img title="" src="assets/2026-05-08-20-34-13-image.png" alt="" data-align="center" width="271">
+explica funcionalidades de estos componentes.
+
+
+
+<img title="" src="assets/2026-05-08-20-34-13-image.png" alt="" data-align="center" width="271">
 
 Este es un ejemplo básico y quiero desarrollarlo mucho más, pero entiendo que puede ser el nivel idóneo para que entendáis el funcionamiento de los componentes de SVAR, paso inicial para que después podáis leer y entender los ejemplos que dispone esta empresa.
 
@@ -140,6 +144,8 @@ Este es un ejemplo básico y quiero desarrollarlo mucho más, pero entiendo que 
 Podréis comprobar que en el GRID de Películas he utilizado código distinto para resolver el «lookup» de Temas y el de Soporte. Esto lo he hecho para que podáis comprobar cómo se puede utilizar ambas formas y las ventajas e inconvenientes que puede tener cada forma de resolver el «lookup».
 
 Creo que los ficheros del directorio «src/components», están llenos de comentarios y pienso que se pueden entender, no obstante si algún aspecto os resulta complejo, por favor, avisadme en mi email e intentaré resolver vuestras dudas.
+
+
 
 ### Svelte 5 + Tailwind CSS + Daisy UI + Felte + Zod
 
@@ -168,21 +174,31 @@ En la página de [Daisy UI](https://daisyui.com/docs/install/) te explica cómo 
 
 - **Crear proyecto Svelte**
   
-  ***npm create vite@latest <nombre-proyecto>***  
-  ***cd <nombre-proyecto>***  
+  ***npm create vite@latest \<nombre-proyecto\>***  
+  ***cd \<nombre-proyecto\>***  
   ***npm install***
   
   En el diálogo que aparece al hacer el *create*, indicad que quieres un proyecto de **Svelte** y que sólo vas a trabajar con **JavaScript**.
   
+  
+  
   Para **instalar un desarrollo**, es necesario descargarlo en un directorio y después:  
-  ***cd <directorio-app>***  
+  ***cd \<directorio-app\>***  
   ***npm install***
+  
+  
 
 - **Instalar Tailwind CSS y Daisy UI**
   
+  
+  
   **npm install tailwindcss@latest @tailwindcss/vite@latest daisyui@latest**
+  
+  
 
 - **Añadir Tailwind CSS a Vite Config**
+  
+  
   
   Fichero **vite.config.js**
 
@@ -222,12 +238,14 @@ export default defineConfig({
 }
 ```
 
-Aquí se define los temas de Daisy UI que están definidos por defecto y además los que puedes usar y cambiar dinámicamente.  
+Aquí se define los temas de **Daisy UI** que están definidos por defecto y además los que puedes usar y cambiar dinámicamente.  
 La información de los temas y su configuración lo puedes ver [en este enlace](https://daisyui.com/docs/themes/). Para cambiar dinámicamente de tema tienes que utilizar esta sentencia:
 
 ```js
 document.documentElement.setAttribute("data-theme", "emerald");
 ```
+
+
 
 ### Svelte 5 + SVAR 2 + Tailwind CSS + Daisy UI
 
@@ -235,25 +253,35 @@ document.documentElement.setAttribute("data-theme", "emerald");
 
 **DEMO**: [https://fhumanes.com/movie-svar/](https://fhumanes.com/movie-svar/#/movies)
 
-Este ejercicio era algo que quería emprender hace mucho tiempo. Los componentes de **[SVAR**](https://svar.dev/), me gustan, me parecen bastantes completos, creo que pueden ser muy 
+
+
+Este ejercicio era algo que quería emprender hace mucho tiempo. Los componentes de **[SVAR](https://svar.dev/),** me gustan, me parecen bastantes completos, creo que pueden ser muy 
 eficientes para escribir código rápidamente y que también pueden ser muy útiles para aquellos que empiezan en el desarrollo, porque hay muchas  cosas  que hace por ti y que suelen estar muy bien hechas.
 
 Ahora bien, para mí, tiene una definición de temas que es bastante  «oscuro», ya que no disponen de una documentación sencilla y completa,  para que podamos ajustar estos temas a nuestra necesidades o gustos.
 
-Al haber terminado el ejemplo de [Tailwind CSS](https://tailwindcss.com/) y [Daisy UI](https://daisyui.com/), ver la facilidad que ofrecen a los desarrolladores para los ajustes de  UI de las aplicaciones, pensé que una solución de ese tipo, es lo que requerían los componentes de SVAR.
+Al haber terminado el ejemplo de [Tailwind CSS](https://tailwindcss.com/) y [Daisy UI](https://daisyui.com/), ver la facilidad que ofrecen a los desarrolladores para los ajustes de  UI de las aplicaciones, pensé que una solución de ese tipo, es lo que requerían los componentes de **SVAR**.
 
-La integración ha quedado un poco artificial. Se la he pasado al equipo de **SVAR**, por si consideran que pudiera ser de utilidad y que hagan el trabajo de integración.
+La integración ha quedado un poco *artificial*. Se la he pasado al equipo de **SVAR**, por si consideran que pudiera ser de utilidad y que hagan el trabajo de integración.
+
+
 
 (1) **themes/daisy-example.css** .- En este fichero lo único que muestra son las propiedades de CSS que varían cuando se cambian los temas de Daisy UI. No interviene en la ejecución de la aplicación.
 
-(2) **theme/Willow-custom.css** .- Son las propiedades de CSS que cambian en los cambios de temas  de SVAR. En él se pueden establecer las correspondencias entre las 
-propiedades de Daisy y SVAR, para que cuando cambie el tema de Daisy se 
+
+
+(2) **theme/Willow-custom.css** .- Son las propiedades de CSS que cambian en los cambios de temas  de **SVAR**. En él se pueden establecer las correspondencias entre las 
+propiedades de **Daisy** y **SVAR**, para que cuando cambie el tema de Daisy se 
 ajuste el tema de SVAR.
+
+
 
 (3) **themes/custom-theme.css** .- Es el fichero de personalización del tema de SVAR para esta aplicación. Se podría haber actualizado el fichero (2) con parte de este
  fichero, pero creo que es más interesante disponer de 2 ficheros con  personalización General (2) y Específica (3).
 
-(4) **theme/ThemeSelector.svelte** .- Es el código que se utiliza para el cambio de tema de Daisy. Es sencillo de leer, un selector o combo de todos los tema y el código que
+
+
+(4) **theme/ThemeSelector.svelte** .- Es el código que se utiliza para el cambio de tema de **Daisy**. Es sencillo de leer, un selector o combo de todos los tema y el código que
  produce el cambio:
 
 ```js
@@ -262,8 +290,10 @@ ajuste el tema de SVAR.
 
 (5) **app.css** .- El fichero de integración de Tailwind y Daisy UI, con el conjunto de Temas que se pueden utilizar en la aplicación.
 
+
+
 (6)  **App.svelte** .- El inicio de la aplicación con la configuración de la carga de 
-los ficheros CSS.  Si observáis, el fichero (3), su contenido está en el apartado de «<styles global>». Cuando desarrollo, lo tengo que tener ahí para que los cambios se vean actualizado en la ventana de Test del desarrollo. Esto no es necesario en producción y puede habilitarse la línea 48.
+los ficheros CSS.  Si observáis, el fichero (3), su contenido está en el apartado de «\<styles global\>». Cuando desarrollo, lo tengo que tener ahí para que los cambios se vean actualizado en la ventana de Test del desarrollo. Esto no es necesario en producción y puede habilitarse la línea 48.
 
 ```js
   @import "./themes/custom-theme.css"; /* Importa tu tema personalizado */
